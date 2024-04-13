@@ -1,0 +1,15 @@
+BUILD-SERVER:
+docker build -t myserver-image -f Dockerfile_Server .
+docker run -d -p 8081:8080 myserver-image
+
+BUILD-Proxy:
+docker build -t myproxy-image -f Dockerfile_Proxy .
+docker run -d -p 8080:8080 myproxy-image
+
+
+
+Lista körande containrar:
+docker ps
+
+Stoppa image:
+docker stop myproxy-image
